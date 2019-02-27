@@ -1,0 +1,51 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+header{
+    background-color: rgb(245, 168, 52);
+}
+nav{
+    padding: 0;
+    margin : 0;
+    display: flex;
+    justify-content: flex-start;
+    height: 70px;
+}
+ul{
+    padding :1rem;
+    margin :0;
+    display: flex;
+    height: 70%;
+    align-self: center;
+    
+}
+li{
+    display: flex;
+    height: 80%;
+    list-style: none;
+    padding: 0 1rem;
+    margin: 0.6rem;
+    font-family: inherit;
+    /* border : solid 1px black; */
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+}
+a{
+    align-self: center;
+    justify-self: center;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    
+}
+a:hover,
+a .active{
+    color: white;
+}
+li:hover,
+.active{
+    background-color: rgb(189, 139, 63);
+}
