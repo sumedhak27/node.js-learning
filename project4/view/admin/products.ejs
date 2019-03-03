@@ -1,0 +1,34 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/product.css">
+</head>
+<body>
+    <%- include('../includes/navigation.ejs')%>
+
+
+    <% if(prod.length > 0 ) { %>
+        <div class="container">
+            <% for(let product of prod) { %>
+                <div class="card">
+                    <div class="card-header"> 
+                        <h1><%=product.title%></h1>
+                    </div>
+                    <div class="card-img">
+                        <img src= "<%= product.imgUrl %>"  alt="BOOK">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-price">Price : <%= product.price %> rs</h3>
+                        <h4 class="card-description"><%= product.description %><h4>
+                        <div class="card-action">
+                            <form method="GET" action="/edit-product/<%= product.id %>?edit=true">
+                                <button class="btn">Edit</button>
+                            </form>
+                            <form action="/edit-product/<%= product.id %>/delete?edit=true" method="POST">
+                                <button class="btn">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <%  } %>
+        </div>
+    <% }  %>
+<%- include('../includes/end.ejs')%>
